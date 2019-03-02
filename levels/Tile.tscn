@@ -28,6 +28,7 @@ position = Vector2( 0, 1.64041 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
 position = Vector2( 1280, 303.524 )
+rect = Rect2( -1500, -10, 20, 20 )
 
 [node name="Position2D" type="Position2D" parent="Connectors/VisibilityNotifier2D"]
 visible = false
@@ -90,10 +91,28 @@ collision_layer = 8
 polygon = PoolVector2Array( 166.265, 399.391, 214.952, 372.184, 475.571, 468.126, 495.619, 535.429, 252.184, 481.014 )
 
 [node name="Spawners" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spawner2" type="Position2D" parent="Spawners"]
 position = Vector2( 498.929, 685.84 )
 
 [node name="Spawner1" type="Position2D" parent="Spawners"]
 position = Vector2( 1013.89, 24.6698 )
+
+[node name="Canal" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Canal"]
+editor/display_folded = true
+space_override = 3
+gravity_vec = Vector2( -1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D"]
+polygon = PoolVector2Array( 987.842, -38.8947, 588.895, 283.211, 799.421, 330.579, 1137.32, 3.21053 )
+
+[node name="Area2D2" type="Area2D" parent="Canal"]
+space_override = 3
+gravity_vec = Vector2( -1, -1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D2"]
+polygon = PoolVector2Array( 213.062, 375.162, 487.041, 472.089, 700.28, 769.331, 372.022, 769.331 )
 
