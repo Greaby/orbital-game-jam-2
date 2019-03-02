@@ -57,7 +57,18 @@ left={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Globule"
+2d_physics/layer_3="Wall"
+2d_physics/layer_4="Gate"
+
+[physics]
+
+2d/default_gravity_vector=Vector2( -1, 0 )
+
 [rendering]
 
-environment/default_clear_color=Color( 0.952941, 0.403922, 0.403922, 1 )
+environment/default_clear_color=Color( 0.145098, 0.0784314, 0.0784314, 1 )
 environment/default_environment="res://default_env.tres"
