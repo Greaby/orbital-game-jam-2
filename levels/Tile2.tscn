@@ -1,51 +1,44 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/Tile.gd" type="Script" id=1]
+[ext_resource path="res://levels/assets/tile2.png" type="Texture" id=2]
 
-[sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/tile1.png-463f631b0af8e4532d217b47982a6515.stex"
-
-[node name="Tile" type="Node2D"]
+[node name="Tile1" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="tile1" type="Sprite" parent="."]
-position = Vector2( 640.583, 365.197 )
-texture = SubResource( 1 )
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 640, 364 )
+texture = ExtResource( 2 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
-position = Vector2( 0, 230.502 )
+position = Vector2( 0, 111 )
 
 [node name="Connectors" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 1.64041 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
-position = Vector2( 1280, 303.524 )
-
-[node name="Position2D" type="Position2D" parent="Connectors/VisibilityNotifier2D"]
-visible = false
-position = Vector2( 0.0686035, 1.19513 )
+position = Vector2( 1280, 345 )
+rect = Rect2( 0, 0, 20, 20 )
 
 [node name="Walls" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 640.583, 365.197 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
 position = Vector2( -640.583, -365.197 )
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D3"]
-polygon = PoolVector2Array( 2.7, 140.55, 52.1, 133.9, 100.55, 132.95, 171.8, 144.35, 294.35, 176.65, 593.6, 280.2, 680.05, 251.7, 750.35, 208, 850.1, 129.15, 912.8, 68.35, 941.3, 36.05, 963.15, 6.59998, 997.35, -73.2, 0, -70, 1.75, 31.3 )
+polygon = PoolVector2Array( 2.11072, 112.221, 74.5472, 110.994, 185.044, 119.588, 442.869, 165.014, 699.466, 231.312, 750.35, 208, 859.072, 140.459, 916.776, 102.399, 973.252, 36.1011, 1028.5, -79.3063, 1038.32, -213.13, 1007.63, -358.004, 878.02, -336.14, 837.935, -68.9106, 548.994, 11.2581, 0, -70 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
-editor/display_folded = true
 position = Vector2( -640.583, -365.197 )
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D4"]
-polygon = PoolVector2Array( 790.31, 323.045, 877.786, 255.397, 978.092, 163.255, 1049.24, 82.7768, 1077.06, 40.745, 1097.2, 1.94763, 1279.59, 1.94763, 1280.18, 185.416, 1177.54, 233.236, 1094.73, 271.726, 992.088, 307.882, 903.445, 325.378 )
+polygon = PoolVector2Array( 975.84, 213.529, 1051.19, 143.723, 1123.21, 0.786804, 1151.1, -102.948, 1153.69, -172.735, 1153.69, -252.861, 1139.47, -300.678, 1113.63, -351.08, 1293.26, -340.741, 1285.51, 346.793, 1086.49, 327.407, 857.739, 275.713 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
 editor/display_folded = true
@@ -54,7 +47,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D2"]
-polygon = PoolVector2Array( 450.835, 460.574, 520.983, 587.508, 582.948, 724.9, 762.498, 723, 930.648, 721.1, 1089.3, 720.15, 1279.17, 718.799, 1279.83, 419.423, 1189.06, 460.574, 1123.92, 478.946, 1035.4, 503.999, 943.539, 515.69, 844.998, 524.041, 743.117, 520.701, 659.608, 512.35, 584.45, 498.989 )
+polygon = PoolVector2Array( 456.455, 405.102, 549.672, 593.25, 709.821, 904.792, 873.066, 1087.08, 971.013, 1034.03, 816.656, 740.206, 933.245, 660.63, 1279.17, 718.799, 1282.23, 576.556, 882.588, 518.445 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 editor/display_folded = true
@@ -63,24 +56,24 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PoolVector2Array( 442.04, 726.372, 365.656, 557.445, 294.101, 443.131, 211.999, 368.714, 134.363, 339.886, 50.5986, 334.042, 2.50961, 333.496, 0.0541382, 720.234 )
+polygon = PoolVector2Array( 242.991, 1073.77, 388.551, 846.585, 441.606, 706.466, 438.885, 627.564, 358.623, 452.075, 266.117, 360.93, 134.363, 339.886, 50.5986, 334.042, 2.50961, 333.496, 6.28577, 1094.17 )
 
 [node name="Gates" type="Node2D" parent="."]
 editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Gates"]
-editor/display_folded = true
 collision_layer = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gates/StaticBody2D"]
-polygon = PoolVector2Array( 580.2, 249.1, 594.45, 282.35, 792.05, 324.15, 853.8, 292.8, 640.05, 229.15 )
+position = Vector2( 95.2263, -55.7754 )
+polygon = PoolVector2Array( 594.45, 282.35, 786.228, 336.026, 853.8, 292.8, 640.05, 229.15 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Gates"]
-editor/display_folded = true
 collision_layer = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gates/StaticBody2D2"]
-polygon = PoolVector2Array( 166.265, 399.391, 214.952, 372.184, 475.571, 468.126, 495.619, 535.429, 252.184, 481.014 )
+position = Vector2( 51.6942, -13.6037 )
+polygon = PoolVector2Array( 214.952, 372.184, 410.765, 421.729, 461.099, 481.585, 213.511, 433.972 )
 
 [node name="Spawners" type="Node2D" parent="."]
 editor/display_folded = true
@@ -95,17 +88,16 @@ position = Vector2( 1013.89, 24.6698 )
 editor/display_folded = true
 
 [node name="Area2D" type="Area2D" parent="Canal"]
-editor/display_folded = true
 space_override = 3
 gravity_vec = Vector2( -1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D"]
-polygon = PoolVector2Array( 987.842, -38.8947, 588.895, 283.211, 799.421, 330.579, 1137.32, 3.21053 )
+polygon = PoolVector2Array( 1027.2, -85.5476, 919.733, 104.905, 697.992, 228.699, 873.481, 277.672, 1061.21, 141.635, 1159.16, -88.2683 )
 
 [node name="Area2D2" type="Area2D" parent="Canal"]
 space_override = 3
 gravity_vec = Vector2( -1, -1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D2"]
-polygon = PoolVector2Array( 213.062, 375.162, 487.041, 472.089, 700.28, 769.331, 372.022, 769.331 )
+polygon = PoolVector2Array( 265.393, 366.096, 458.566, 402.826, 657.181, 806.857, 376.787, 885.446, 450.626, 709.637, 405.512, 549.747 )
 

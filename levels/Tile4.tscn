@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/Tile.gd" type="Script" id=1]
+[ext_resource path="res://levels/assets/tile4.png" type="Texture" id=2]
+
+[node name="Tile4" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 640, 364 )
+texture = ExtResource( 2 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
+position = Vector2( 0, 244 )
+
+[node name="Connectors" type="Node2D" parent="."]
+position = Vector2( 0, 1.64041 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
+position = Vector2( 1280, 55 )
+rect = Rect2( 0, 0, 20, 20 )
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 640.583, 365.197 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D3"]
+polygon = PoolVector2Array( 5.87619, 242.313, 151.977, 265.64, 309.127, 254.59, 442.951, 83.9348, 489.605, -15.5126, 485.922, -98.9988, 469.961, -162.841, 426.991, -256.149, 368.059, -355.596, -8.85648, -350.685 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D4"]
+polygon = PoolVector2Array( 667.176, -111.018, 710.889, -205.98, 762.138, -285.869, 839.013, -350.685, 1293.26, -340.741, 1280.66, 54.7892, 1062.1, 74.3847, 495.339, 217.582 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D2"]
+polygon = PoolVector2Array( 967, 331, 1095, 411, 1205, 480, 1285.47, 504.635, 1280.03, 284.254, 1167.12, 291.056 )
+
+[node name="Gates" type="Node2D" parent="Walls/StaticBody2D2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/StaticBody2D2/Gates"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D2/Gates/StaticBody2D"]
+position = Vector2( -256.274, -123.42 )
+polygon = PoolVector2Array( 552.151, 378.149, 782.446, 333.134, 808.748, 299.573, 564.429, 342.544 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls/StaticBody2D2/Gates"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D2/Gates/StaticBody2D2"]
+position = Vector2( 589.505, -105.193 )
+polygon = PoolVector2Array( 169.23, 485.151, 397.589, 433.586, 436.877, 460.596, 191.329, 520.755 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PoolVector2Array( 1279.14, 632.852, 1141.51, 585.342, 850.156, 401.054, 777.166, 374.381, 426.493, 468.561, 171.597, 494.489, 0.391632, 484.571, 1.18964, 679.429 )
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Spawner2" type="Position2D" parent="Spawners"]
+position = Vector2( 1176.6, 522.757 )
+
+[node name="Spawner1" type="Position2D" parent="Spawners"]
+position = Vector2( 603.706, -159.82 )
+
+[node name="Canal" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Canal"]
+space_override = 3
+gravity_vec = Vector2( -1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D"]
+position = Vector2( -458.549, -207.854 )
+polygon = PoolVector2Array( 860.387, -23.2444, 758.506, 462.779, 967.279, 422.695, 1214.47, -14.8935 )
+
+[node name="Area2D2" type="Area2D" parent="Canal"]
+space_override = 3
+gravity_vec = Vector2( -1, -1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D2"]
+position = Vector2( 305.817, -18.8365 )
+polygon = PoolVector2Array( 455.111, 400.695, 705.638, 343.909, 996.25, 510.927, 881.007, 641.202 )
+
