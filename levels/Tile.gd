@@ -3,7 +3,8 @@ extends Node2D
 signal new_tile
 
 var globules = [
-    "res://globule/Gobule.tscn"
+    "res://globule/Oxygene.tscn",
+    "res://globule/CO2.tscn"
 ];
 
 func _ready():
@@ -23,7 +24,12 @@ func _on_screen_entered(connector):
 
 func spawn_globule():
     for spawner in $Spawners.get_children():
-        var globule = load(globules[randi() % globules.size()]).instance()
-        globule.position = spawner.global_position
-        get_parent().add_child(globule)
+        if randi() % 100 > 90:
+            var globule = load(globules[randi() % globules.size()]).instance()
+            globule.position = spawner.global_position
+            get_parent().add_child(globule)
+        else:
+            var globule = load("res://globule/Globule.tscn").instance()
+            globule.position = spawner.global_position
+            get_parent().add_child(globule)
     

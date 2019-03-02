@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile1.png-463f631b0af8e4532d217b47982a6515.stex"
+path="res://.import/oxygene.png-8fab31efd2c6e74c936d68d5d2ef3442.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/assets/tile1.png"
-dest_files=[ "res://.import/tile1.png-463f631b0af8e4532d217b47982a6515.stex" ]
+source_file="res://globule/assets/oxygene.png"
+dest_files=[ "res://.import/oxygene.png-8fab31efd2c6e74c936d68d5d2ef3442.stex" ]
 
 [params]
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/Tile.gd" type="Script" id=1]
 [ext_resource path="res://levels/assets/tile1.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Tile" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,24 +10,14 @@ script = ExtResource( 1 )
 position = Vector2( 640.583, 365.197 )
 texture = ExtResource( 2 )
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 474.661, 119.147 )
-texture = ExtResource( 3 )
-
-[node name="icon2" type="Sprite" parent="."]
-position = Vector2( 1046.27, 119.147 )
-texture = ExtResource( 3 )
-
 [node name="SpawnPosition" type="Position2D" parent="."]
 position = Vector2( 0, 230.502 )
 
 [node name="Connectors" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 1.64041 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
 position = Vector2( 1280, 303.524 )
-rect = Rect2( -1500, -10, 20, 20 )
 
 [node name="Position2D" type="Position2D" parent="Connectors/VisibilityNotifier2D"]
 visible = false
@@ -100,6 +89,7 @@ position = Vector2( 498.929, 685.84 )
 position = Vector2( 1013.89, 24.6698 )
 
 [node name="Canal" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Area2D" type="Area2D" parent="Canal"]
 editor/display_folded = true

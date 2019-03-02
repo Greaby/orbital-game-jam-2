@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.8741
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 39.4412
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 11.18
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.411765, 0.8, 0.87451, 1 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -1 )
@@ -17,3 +30,15 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="Pickup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup"]
+shape = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
+amount = 15
+local_coords = false
+process_material = SubResource( 3 )
+
+[connection signal="body_entered" from="Pickup" to="." method="_on_Pickup_body_entered"]
