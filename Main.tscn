@@ -4,7 +4,7 @@
 [ext_resource path="res://ui/assets/background.png" type="Texture" id=2]
 [ext_resource path="res://levels/Tile1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://work-import/3C91A931-6165-4D26-83E1-1ADA47396CA0.png" type="Texture" id=5]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mon morceau.ogg" type="AudioStream" id=7]
 
@@ -61,7 +61,6 @@ anims/pulse = SubResource( 1 )
 [node name="Items" type="Node2D" parent="."]
 
 [node name="End" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 9.52264, 227.183 )
 collision_layer = 32
 __meta__ = {
@@ -72,6 +71,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="End"]
+position = Vector2( -200, 0 )
 texture = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
