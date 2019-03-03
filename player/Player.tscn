@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/assets/move-1.png" type="Texture" id=2]
 [ext_resource path="res://player/assets/move-2.png" type="Texture" id=3]
 [ext_resource path="res://player/assets/move-3.png" type="Texture" id=4]
 [ext_resource path="res://player/assets/move-4.png" type="Texture" id=5]
+[ext_resource path="res://player/assets/oxy-particle.png" type="Texture" id=6]
+[ext_resource path="res://player/assets/co2-particle.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,9 +24,18 @@ radius = 39.4412
 
 [sub_resource type="ParticlesMaterial" id=4]
 emission_shape = 1
-emission_sphere_radius = 11.18
+emission_sphere_radius = 40.48
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.411765, 0.8, 0.87451, 1 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 40.48
+flag_disable_z = true
+gravity = Vector3( 0, 100, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.411765, 0.8, 0.87451, 1 )
@@ -38,7 +49,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "move"
-frame = 4
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -49,10 +60,18 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup"]
 shape = SubResource( 3 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="OxyParticles" type="Particles2D" parent="."]
 emitting = false
 amount = 15
 local_coords = false
 process_material = SubResource( 4 )
+texture = ExtResource( 6 )
+
+[node name="Co2Particles" type="Particles2D" parent="."]
+emitting = false
+amount = 15
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 7 )
 
 [connection signal="body_entered" from="Pickup" to="." method="_on_Pickup_body_entered"]
