@@ -4,7 +4,8 @@ signal new_tile
 
 var globules = [
     "res://globule/Oxygene.tscn",
-    "res://globule/CO2.tscn"
+    "res://globule/CO2.tscn",
+    "res://globule/Virus.tscn"
 ];
 
 func _ready():
@@ -30,8 +31,13 @@ func spawn_globules():
         spawn_globule(spawner.global_position)
     
 func spawn_globule(position):
-    if randi() % 100 > 90:
-        var globule = load(globules[randi() % globules.size()]).instance()
+    var r = randi()
+    if r % 100 > 95:
+        var globule = load(globules[2]).instance()
+        globule.position = position
+        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
+    elif r % 100 > 75:
+        var globule = load(globules[randi() % 2]).instance()
         globule.position = position
         get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
     else:
