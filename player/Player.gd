@@ -33,3 +33,19 @@ func _on_Pickup_body_entered(body):
     if body.is_in_group("pickable"):
         oxygene += body.points
         body.queue_free()
+        
+        if body.points > 0:
+            emmit_oxy_particle()
+        else:
+            emmit_co2_particle()
+
+func emmit_oxy_particle():
+    $OxyParticles.emitting = true
+    yield(get_tree().create_timer(.2), "timeout")
+    $OxyParticles.emitting = false
+    
+func emmit_co2_particle():
+    $Co2Particles.emitting = true
+    yield(get_tree().create_timer(.2), "timeout")
+    $Co2Particles.emitting = false
+    
