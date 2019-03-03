@@ -41,12 +41,7 @@ func _on_Pickup_body_entered(body):
         if body.points > 0:
             emmit_oxy_particle()
         elif body.points == 0:
-            inverser = -1
-            var inverse_timer = Timer.new()
-            inverse_timer.connect("timeout",self,"reset_inverse")
-            inverse_timer.wait_time = 6
-            add_child(inverse_timer) #to process
-            inverse_timer.start() #to start
+            reset_inverse()
         else:
             emmit_co2_particle()
 
@@ -57,9 +52,13 @@ func emmit_oxy_particle():
     
 func emmit_co2_particle():
     $Co2Particles.emitting = true
-    yield(get_tree().create_timer(.2), "timeout")
+    yield(get_tree().create_timer(.4), "timeout")
     $Co2Particles.emitting = false
     
 func reset_inverse():
+    inverser = -1
+    $VirusParticles.emitting = true
+    yield(get_tree().create_timer(6), "timeout")
     inverser = 1
+    $VirusParticles.emitting = false
     

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/assets/move-1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://player/assets/move-4.png" type="Texture" id=5]
 [ext_resource path="res://player/assets/oxy-particle.png" type="Texture" id=6]
 [ext_resource path="res://player/assets/co2-particle.png" type="Texture" id=7]
+[ext_resource path="res://player/assets/virus-particle.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,6 +43,16 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.411765, 0.8, 0.87451, 1 )
 
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 40.48
+flag_disable_z = true
+gravity = Vector3( 0, -30, 0 )
+angular_velocity = -538.95
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.411765, 0.8, 0.87451, 1 )
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -1 )
 collision_mask = 15
@@ -51,7 +62,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "move"
-frame = 4
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -75,5 +86,12 @@ amount = 15
 local_coords = false
 process_material = SubResource( 5 )
 texture = ExtResource( 7 )
+
+[node name="VirusParticles" type="Particles2D" parent="."]
+emitting = false
+amount = 15
+local_coords = false
+process_material = SubResource( 6 )
+texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="Pickup" to="." method="_on_Pickup_body_entered"]
