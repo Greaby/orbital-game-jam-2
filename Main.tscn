@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://levels/Tile1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/background.png" type="Texture" id=4]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,4 +17,14 @@ position = Vector2( 70.6329, 240.457 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.75, 0.75 )
+motion_mirroring = Vector2( 2490, 1390 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 10, 10 )
+texture = ExtResource( 4 )
 
