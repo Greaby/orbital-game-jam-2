@@ -14,6 +14,7 @@ texture = ExtResource( 2 )
 position = Vector2( 0, 293 )
 
 [node name="Connectors" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 1.64041 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
@@ -25,6 +26,7 @@ position = Vector2( 1280, 608 )
 rect = Rect2( 0, 0, 20, 20 )
 
 [node name="Walls" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 640.583, 365.197 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
@@ -72,6 +74,7 @@ position = Vector2( -124.494, 292.37 )
 polygon = PoolVector2Array( 680.497, 505.498, 913.446, 554.369, 868.648, 508.756, 679.683, 459.886 )
 
 [node name="Spawners" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spawner1" type="Position2D" parent="Spawners"]
 position = Vector2( 825.781, 1032.93 )
@@ -92,6 +95,60 @@ position = Vector2( 3063.41, -116.228 )
 
 [node name="VisibilityNotifier2D2" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 3224.76, 693.33 )
+
+[node name="Globules" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Position2D" type="Position2D" parent="Globules"]
+position = Vector2( 90.883, 380.274 )
+
+[node name="Position2D2" type="Position2D" parent="Globules"]
+position = Vector2( 224.816, 289.391 )
+
+[node name="Position2D3" type="Position2D" parent="Globules"]
+position = Vector2( 418.54, 253.516 )
+
+[node name="Position2D4" type="Position2D" parent="Globules"]
+position = Vector2( 526.165, 93.2747 )
+
+[node name="Position2D5" type="Position2D" parent="Globules"]
+position = Vector2( 734.239, 74.1414 )
+
+[node name="Position2D6" type="Position2D" parent="Globules"]
+position = Vector2( 820.339, -62.1831 )
+
+[node name="Position2D7" type="Position2D" parent="Globules"]
+position = Vector2( 1016.45, -21.5249 )
+
+[node name="Position2D8" type="Position2D" parent="Globules"]
+position = Vector2( 1152.78, -126.758 )
+
+[node name="Position2D9" type="Position2D" parent="Globules"]
+position = Vector2( 234.383, 420.932 )
+
+[node name="Position2D10" type="Position2D" parent="Globules"]
+position = Vector2( 284.607, 545.298 )
+
+[node name="Position2D11" type="Position2D" parent="Globules"]
+position = Vector2( 437.673, 540.515 )
+
+[node name="Position2D12" type="Position2D" parent="Globules"]
+position = Vector2( 530.948, 693.581 )
+
+[node name="Position2D13" type="Position2D" parent="Globules"]
+position = Vector2( 638.573, 631.398 )
+
+[node name="Position2D14" type="Position2D" parent="Globules"]
+position = Vector2( 791.639, 734.239 )
+
+[node name="Position2D15" type="Position2D" parent="Globules"]
+position = Vector2( 896.872, 681.623 )
+
+[node name="Position2D16" type="Position2D" parent="Globules"]
+position = Vector2( 1035.59, 779.681 )
+
+[node name="Position2D17" type="Position2D" parent="Globules"]
+position = Vector2( 1217.35, 669.664 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="screen_exited" from="VisibilityNotifier2D2" to="." method="_on_VisibilityNotifier2D_screen_exited"]

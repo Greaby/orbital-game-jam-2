@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://levels/Tile1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/background.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.97, 0.97 ), Vector2( 1.01, 1.01 ), Vector2( 1, 1 ), Vector2( 1.01, 1.01 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,6 +35,8 @@ position = Vector2( 70.6329, 240.457 )
 current = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 1.0053, 1.0053 )
+transform = Transform2D( 1.0053, 0, 0, 1.0053, 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
@@ -27,4 +45,8 @@ motion_mirroring = Vector2( 2490, 1390 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 10, 10 )
 texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "pulse"
+anims/pulse = SubResource( 1 )
 
