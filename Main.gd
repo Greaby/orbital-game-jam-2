@@ -19,10 +19,10 @@ func _ready():
 func _process(delta):
     $End.position.y = $Player.position.y
     #$End.position.x = max($End.position.x, $Player.position.x - 740)
-    if $Player.oxygene > 250:
+    if $Player.oxygene > 200:
         $End.position.x = $Player.position.x - 740
     else:
-        $End.position.x = $Player.position.x - 300
+        $End.position.x = $Player.position.x - 740 + (200 - $Player.oxygene) * 5
 
 func add_tile(position):
     var tile = load(tiles[randi() % tiles.size()]).instance()

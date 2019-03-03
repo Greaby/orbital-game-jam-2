@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var points = -50
+var points = -80
 
 func _process(delta):
     if GameState.player.position.x - 1280 > position.x:

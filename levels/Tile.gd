@@ -36,7 +36,7 @@ func spawn_globule(position):
     
     if r % 100 >= 95:
         globule = load(globules[2]).instance()
-    elif 75 <= r % 100 and r % 100 < 95:
+    elif 85 <= r % 100 and r % 100 < 95:
         globule = load(globules[0]).instance()
     elif 65 <= r % 100 and r % 100 < 75:
         globule = load(globules[1]).instance()

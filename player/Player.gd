@@ -5,7 +5,7 @@ var speed = 600
 var input_direction = Vector2()
 var velocity = Vector2()
 
-var oxygene = 1200
+var oxygene = 500
 var inverser = 1
 
 func _ready():
@@ -28,7 +28,7 @@ func _physics_process(delta):
     
     $AnimatedSprite.rotation = velocity.angle() + PI / 2
     
-    oxygene -= 150 * delta
+    oxygene -= 30 * delta
     oxygene = clamp(oxygene, 0, 1500)
     
     move_and_slide(velocity)
