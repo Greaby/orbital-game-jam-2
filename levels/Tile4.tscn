@@ -108,7 +108,6 @@ polygon = PoolVector2Array( 455.111, 400.695, 705.638, 343.909, 996.25, 510.927,
 position = Vector2( 2881.13, 167.096 )
 
 [node name="Globules" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Position2D" type="Position2D" parent="Globules"]
 position = Vector2( 45.4414, 320.362 )

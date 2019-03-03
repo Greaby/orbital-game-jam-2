@@ -13,6 +13,7 @@ func _ready():
     randomize()
     $Tiles/Tile.connect("new_tile", self, "add_tile")
     GameState.player = $Player
+    GameState.hud = $CanvasLayer/HUD
 
 func _process(delta):
     $End.position.y = $Player.position.y
