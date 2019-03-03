@@ -36,6 +36,8 @@ func _on_Pickup_body_entered(body):
         
         if body.points > 0:
             emmit_oxy_particle()
+        elif body.points == 0:
+            pass
         else:
             emmit_co2_particle()
 

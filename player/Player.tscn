@@ -27,6 +27,7 @@ emission_shape = 1
 emission_sphere_radius = 40.48
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.411765, 0.8, 0.87451, 1 )
@@ -36,6 +37,7 @@ emission_shape = 1
 emission_sphere_radius = 40.48
 flag_disable_z = true
 gravity = Vector3( 0, 100, 0 )
+angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.411765, 0.8, 0.87451, 1 )
@@ -49,7 +51,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "move"
-frame = 5
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
