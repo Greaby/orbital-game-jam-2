@@ -43,7 +43,6 @@ scale = Vector2( 10, 10 )
 texture = ExtResource( 2 )
 
 [node name="Tiles" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Tile" parent="Tiles" instance=ExtResource( 3 )]
 

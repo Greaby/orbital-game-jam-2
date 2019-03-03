@@ -32,18 +32,18 @@ func spawn_globules():
     
 func spawn_globule(position):
     var r = randi()
-    if r % 100 > 95:
-        var globule = load(globules[2]).instance()
-        globule.position = position
-        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
-    elif r % 100 > 75:
-        var globule = load(globules[randi() % 2]).instance()
-        globule.position = position
-        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
+    var globule
+    
+    if r % 100 >= 95:
+        globule = load(globules[2]).instance()
+    elif 75 <= r % 100 and r % 100 < 95:
+        globule = load(globules[0]).instance()
+    elif 65 <= r % 100 and r % 100 < 75:
+        globule = load(globules[1]).instance()
     else:
-        var globule = load("res://globule/Globule.tscn").instance()
-        globule.position = position
-        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
+        globule = load("res://globule/Globule.tscn").instance()
+    globule.position = position
+    get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
 
 func _on_VisibilityNotifier2D_screen_exited():
     queue_free()

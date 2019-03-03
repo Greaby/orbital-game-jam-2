@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-var speed = 200
+var speed = 600
 
 var input_direction = Vector2()
 var velocity = Vector2()
 
-var oxygene = 500
+var oxygene = 1200
 var inverser = 1
 
 func _ready():
@@ -22,14 +22,14 @@ func _physics_process(delta):
         #velocity.x = lerp(velocity.x, -200, .01)
         velocity.y = lerp(velocity.y, 0, .01)
         
-    velocity.x = lerp(velocity.x, oxygene - 100, .08)
+    velocity.x = lerp(velocity.x, oxygene, .08)
     
     GameState.hud.find_node("TextureProgress").value = oxygene
     
     $AnimatedSprite.rotation = velocity.angle() + PI / 2
     
-    oxygene -= 20 * delta
-    oxygene = clamp(oxygene, 0, 500)
+    oxygene -= 150 * delta
+    oxygene = clamp(oxygene, 0, 1500)
     
     move_and_slide(velocity)
 

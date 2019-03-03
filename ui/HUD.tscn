@@ -20,9 +20,9 @@ custom_constants/margin_bottom = 20
 [node name="TextureProgress" type="TextureProgress" parent="MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 80.0
+margin_right = 365.0
 margin_bottom = 700.0
-max_value = 500.0
+max_value = 1500.0
 value = 50.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )

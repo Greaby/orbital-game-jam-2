@@ -17,7 +17,11 @@ func _ready():
 
 func _process(delta):
     $End.position.y = $Player.position.y
-    $End.position.x = max($End.position.x, $Player.position.x - 740)
+    #$End.position.x = max($End.position.x, $Player.position.x - 740)
+    if $Player.oxygene > 250:
+        $End.position.x = $Player.position.x - 740
+    else:
+        $End.position.x = $Player.position.x - 300
 
 func add_tile(position):
     var tile = load(tiles[randi() % tiles.size()]).instance()
