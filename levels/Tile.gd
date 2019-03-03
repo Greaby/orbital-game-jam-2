@@ -33,11 +33,11 @@ func spawn_globule(position):
     if randi() % 100 > 90:
         var globule = load(globules[randi() % globules.size()]).instance()
         globule.position = position
-        get_parent().add_child(globule)
+        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
     else:
         var globule = load("res://globule/Globule.tscn").instance()
         globule.position = position
-        get_parent().add_child(globule)
+        get_parent().get_parent().find_node("Items").call_deferred("add_child", globule)
 
 func _on_VisibilityNotifier2D_screen_exited():
     queue_free()
