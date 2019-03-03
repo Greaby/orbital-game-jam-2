@@ -59,6 +59,7 @@ anims/pulse = SubResource( 1 )
 [node name="Items" type="Node2D" parent="."]
 
 [node name="End" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 9.52264, 227.183 )
 collision_layer = 32
 __meta__ = {
