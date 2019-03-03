@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://ui/assets/background.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mon morceau.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "pulse"
@@ -76,5 +77,8 @@ texture = ExtResource( 5 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]

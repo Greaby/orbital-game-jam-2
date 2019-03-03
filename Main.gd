@@ -14,6 +14,7 @@ func _ready():
     $Tiles/Tile.connect("new_tile", self, "add_tile")
     GameState.player = $Player
     GameState.hud = $CanvasLayer/HUD
+    play_audio()
 
 func _process(delta):
     $End.position.y = $Player.position.y
@@ -28,4 +29,8 @@ func add_tile(position):
     $Tiles.add_child(tile)
 
 func _on_End_body_entered(body):
-    get_tree().change_scene("res://Menu.tscn")
+    get_tree().change_scene("res://ui/GameOver.tscn")
+    
+func play_audio():
+    yield(get_tree().create_timer(.27), "timeout")
+    $AudioStreamPlayer.play()
