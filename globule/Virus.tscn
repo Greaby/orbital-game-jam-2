@@ -7,7 +7,9 @@
 radius = 29.5369
 height = 2.60656
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=[
+"pickable",
+]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource( 1 )
