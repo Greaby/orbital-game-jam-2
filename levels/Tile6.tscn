@@ -97,7 +97,6 @@ position = Vector2( 3063.41, -116.228 )
 position = Vector2( 3224.76, 693.33 )
 
 [node name="Globules" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Position2D" type="Position2D" parent="Globules"]
 position = Vector2( 90.883, 380.274 )

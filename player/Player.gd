@@ -5,7 +5,7 @@ var speed = 200
 var input_direction = Vector2()
 var velocity = Vector2()
 
-var oxygene = 400
+var oxygene = 500
 
 func _ready():
     pass # Replace with function body.
@@ -21,11 +21,14 @@ func _physics_process(delta):
         #velocity.x = lerp(velocity.x, -200, .01)
         velocity.y = lerp(velocity.y, 0, .01)
         
-    velocity.x = lerp(velocity.x, oxygene, .08)
+    velocity.x = lerp(velocity.x, oxygene - 100, .08)
+    
+    GameState.hud.find_node("TextureProgress").value = oxygene
     
     $AnimatedSprite.rotation = velocity.angle() + PI / 2
     
-    oxygene -= clamp(20 * delta, -100, 400)
+    oxygene -= 20 * delta
+    oxygene = clamp(oxygene, 0, 500)
     
     move_and_slide(velocity)
 
