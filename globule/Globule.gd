@@ -8,3 +8,10 @@ var sprites = [
 
 func _ready():
     $Sprite.texture = load(sprites[randi() % sprites.size()])
+    
+func _process(delta):
+    if GameState.player.position.x - 1280 > position.x:
+        queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
+    queue_free()

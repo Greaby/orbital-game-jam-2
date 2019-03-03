@@ -33,3 +33,6 @@ func spawn_globule():
             globule.position = spawner.global_position
             get_parent().add_child(globule)
     
+
+func _on_VisibilityNotifier2D_screen_exited():
+    queue_free()

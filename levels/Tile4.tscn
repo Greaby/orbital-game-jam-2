@@ -100,3 +100,7 @@ gravity_vec = Vector2( -1, -1 )
 position = Vector2( 305.817, -18.8365 )
 polygon = PoolVector2Array( 455.111, 400.695, 705.638, 343.909, 996.25, 510.927, 881.007, 641.202 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 2881.13, 167.096 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

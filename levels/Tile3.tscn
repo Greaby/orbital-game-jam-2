@@ -11,26 +11,25 @@ position = Vector2( 640, 364 )
 texture = ExtResource( 2 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
-position = Vector2( 0, 111 )
+position = Vector2( 0, 144 )
 
 [node name="Connectors" type="Node2D" parent="."]
 position = Vector2( 0, 1.64041 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
-position = Vector2( 1280, 345 )
+position = Vector2( 1280, 296 )
 rect = Rect2( 0, 0, 20, 20 )
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( 640.583, 365.197 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
-editor/display_folded = true
 position = Vector2( -640.583, -365.197 )
 collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D3"]
-polygon = PoolVector2Array( -0.983337, 141.133, 92.6587, 106.14, 213.975, 82.4073, 701.51, -356.374, 22.2854, -388.507, 0, -70 )
+polygon = PoolVector2Array( -0.983337, 141.133, 92.6587, 106.14, 213.975, 82.4073, 701.51, -356.374, 1.71777, -356.645 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
 editor/display_folded = true
@@ -56,7 +55,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PoolVector2Array( 768.392, 1080.59, 726, 941, 694, 590, 650.979, 414.188, 627.179, 376.108, 570.487, 322.863, 430.525, 294.625, 193.571, 315.496, 54.8367, 367.061, 0.816223, 407.577, 1.18964, 679.429, 312.178, 993.59 )
+polygon = PoolVector2Array( 768.392, 1080.59, 726, 941, 694, 590, 650.979, 414.188, 627.179, 376.108, 570.487, 322.863, 430.525, 294.625, 193.571, 315.496, 124.677, 336.715, 54.8367, 367.061, 0.459167, 370.473, 1.18964, 679.429, 312.178, 993.59 )
 
 [node name="Gates" type="Node2D" parent="."]
 
@@ -101,3 +100,7 @@ gravity_vec = Vector2( -1, -1 )
 position = Vector2( 305.817, -18.8365 )
 polygon = PoolVector2Array( 260.873, 342.909, 458.566, 402.826, 594.391, 922.41, 398.269, 951.219 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 2719.7, 429.052 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

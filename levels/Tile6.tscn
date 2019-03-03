@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/Tile.gd" type="Script" id=1]
+[ext_resource path="res://levels/assets/tile6.png" type="Texture" id=2]
+
+[node name="Tile6" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 640, 363.401 )
+texture = ExtResource( 2 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
+position = Vector2( 0, 293 )
+
+[node name="Connectors" type="Node2D" parent="."]
+position = Vector2( 0, 1.64041 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Connectors"]
+position = Vector2( 1280, -215 )
+rect = Rect2( 0, 0, 20, 20 )
+
+[node name="VisibilityNotifier2D2" type="VisibilityNotifier2D" parent="Connectors"]
+position = Vector2( 1280, 608 )
+rect = Rect2( 0, 0, 20, 20 )
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 640.583, 365.197 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D3"]
+position = Vector2( 0, 1.29236 )
+polygon = PoolVector2Array( 1.79944, 292.129, 95.3297, 290.459, 329.155, 128.451, 596.385, -26.8759, 915.39, -167.171, 1104.12, -203.915, 1281.16, -213.936, 1297.86, -355.902, 1.01279, -361.718 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D4"]
+position = Vector2( 0.358521, 1.29236 )
+polygon = PoolVector2Array( 731.667, 160.366, 449.93, 323.955, 343.276, 400.135, 502.187, 489.817, 729.395, 567.067, 1029.31, 614.781, 1125.39, 615.442, 1283.78, 610.237, 1281.51, 14.9529, 1011.13, 42.2178 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PoolVector2Array( -3.02795, 1071.21, 777.775, 1087.79, 652.665, 876.76, 560.717, 753.158, 387.373, 694.372, 176.346, 567.755, 87.4125, 530.072, 3.00153, 521.028, 0.0526428, 726.527 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2( -640.583, -365.197 )
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D2"]
+polygon = PoolVector2Array( 910.679, 1081.73, 1286.14, 1089.89, 1280.7, 835.499, 1170.51, 846.382, 1067.12, 849.103, 898.436, 830.058, 754.236, 804.211 )
+
+[node name="Gates" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gates"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gates/StaticBody2D"]
+position = Vector2( -124.494, 292.37 )
+polygon = PoolVector2Array( 680.497, 505.498, 913.446, 554.369, 868.648, 508.756, 679.683, 459.886 )
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Spawner1" type="Position2D" parent="Spawners"]
+position = Vector2( 825.781, 1032.93 )
+
+[node name="Canal" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Area2D" type="Area2D" parent="Canal"]
+space_override = 3
+gravity_vec = Vector2( -1, -1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Canal/Area2D"]
+position = Vector2( -292.688, 612.365 )
+polygon = PoolVector2Array( 841.688, 140.953, 1051.16, 476.741, 1205.9, 469.373, 1049.06, 190.426 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 3063.41, -116.228 )
+
+[node name="VisibilityNotifier2D2" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 3224.76, 693.33 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D2" to="." method="_on_VisibilityNotifier2D_screen_exited"]
