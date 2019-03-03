@@ -28,4 +28,4 @@ func add_tile(position):
     $Tiles.add_child(tile)
 
 func _on_End_body_entered(body):
-    get_tree().change_scene("res://Main.tscn")
+    get_tree().change_scene("res://Menu.tscn")

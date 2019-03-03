@@ -125,13 +125,13 @@ position = Vector2( 423.792, 251.684 )
 position = Vector2( 468.207, 342.365 )
 
 [node name="Position2D6" type="Position2D" parent="Globules"]
-position = Vector2( 573.692, 309.053 )
+position = Vector2( 561.342, 274.853 )
 
 [node name="Position2D7" type="Position2D" parent="Globules"]
-position = Vector2( 587.258, 381.406 )
+position = Vector2( 540.708, 407.056 )
 
 [node name="Position2D8" type="Position2D" parent="Globules"]
-position = Vector2( 695.787, 382.913 )
+position = Vector2( 772.737, 359.163 )
 
 [node name="Position2D9" type="Position2D" parent="Globules"]
 position = Vector2( 718.397, 464.31 )
